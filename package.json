@@ -58,14 +58,8 @@
     }
   },
   "lint-staged": {
-    "*.{jsx,js}": [
-      "eslint -c .eslintrc.js"
-    ],
     "*.{css,scss}": [
       "stylelint --config .stylelintrc.json"
-    ],
-    "*.{jsx,js,json,html,yml,css,scss,md}": [
-      "prettier --write"
     ]
   }
 }
