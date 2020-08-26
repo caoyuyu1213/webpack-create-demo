@@ -50,5 +50,22 @@
     "webpack-dev-server": "^3.11.0",
     "webpack-merge": "^5.1.2",
     "webpackbar": "^4.0.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -c .commitlintrc.js -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "lint-staged": {
+    "*.{jsx,js}": [
+      "eslint -c .eslintrc.js"
+    ],
+    "*.{css,scss}": [
+      "stylelint --config .stylelintrc.json"
+    ],
+    "*.{jsx,js,json,html,yml,css,scss,md}": [
+      "prettier --write"
+    ]
   }
 }
