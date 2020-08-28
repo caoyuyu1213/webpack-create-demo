@@ -59,6 +59,8 @@ const App = () => {
         <Button type="primary" danger onClick={handleCut}>
           减减
         </Button>
+        <p>换行</p>
+        <Button type="primary" href='/menu'>路由跳转</Button>
       </div>
       <Table columns={columns} dataSource={data} />
     </div>
