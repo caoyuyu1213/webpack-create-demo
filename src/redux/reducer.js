@@ -1,4 +1,4 @@
-import { ADD, CUT, GETTABLEDATA } from "./actionType";
+import { ADD, CUT, GETTABLEDATA, SHOWBUTTON } from "./actionType";
 import initState from "./defaultState";
 
 const reducer = (state = initState, action) => {
@@ -10,6 +10,8 @@ const reducer = (state = initState, action) => {
       return { ...state, number: number - 3 };
     case GETTABLEDATA:
       return { ...state, data: action["table"] };
+    case SHOWBUTTON:
+      return { ...state, jumpStyle: "block" };
     default:
       return state;
   }

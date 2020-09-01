@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="author" content="杨欣">
+  <title>map</title>
+</head>
+
+<body>
+  <!-- 原生实现map方法 -->
+  <script type="text/html">
+    Array.prototype.mockmap = function (callback) {
+      if (!Array.isArray(this) || !this.length || typeof callback !== 'function') {
+        return []
+      } else {
+        let arr = []
+        for (let i = 0; i < this.length; i++) {
+          arr.push(callback(this[i], i, this))
+        }
+        return arr
+      }
+    }
+
+    let testArr = [33, 44, 55, 66]
+    console.log(
+      testArr.mockmap(item => item * 2)
+    )
+  </script>
+  <!-- Array.from -->
+  <script type="text/html">
+    let str = 'cnasjdkjfsdk'
+    console.log(Array.from(str))
+    let arr = [33, 44, 55, 66]
+    console.log(Array.from(arr, x => x * 3))
+  </script>
+  <!-- Array.of -->
+  <script type="text/html">
+    console.log(Array.of(7))
+    console.log(Array.of('7,10,15'))
+    console.log(Array.of(7, 10, 15))
+  </script>
+  <!-- Array.prototype.concat() -->
+  <script type="text/html">
+    const array1 = ['a', 'b', 'c'];
+    const array2 = ['d', 'e', 'f'];
+    const array3 = array1.concat(array2);
+    console.log(array3)
+  </script>
+  <!-- Array.prototype.every -->
+  <script type="text/html">
+    const array1 = [5, 10, 66, 18, 21, 22, 33];
+    const rule = (currentValue) => currentValue <= 40
+    console.log(array1.every(rule))
+  </script>
+  <!-- Array.prototype.fill -->
+  <script type='text/html'>
+    const array1 = [5, 10, 66, 18, 21, 22, 33];
+    const rule = (currentValue) => currentValue <= 40
+    console.log(array1.every(rule))
+  </script>
+  <script>
+    Array.prototype.mockmap = function (callback) {
+      if (!Array.isArray(this) || !this.length || typeof callback !== 'function') {
+        return []
+      } else {
+        let result = []
+        for (let i = 0; i < this.length; i++) {
+          result.push(callback(this[i], i, this))
+        }
+        return result
+      }
+    }
+    let arr = [3, 7, 5, 8, 4]
+    console.log(arr.mockmap(item => item * 3))
+  </script>
+</body>
+
+</html>

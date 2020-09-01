@@ -49,6 +49,13 @@ module.exports = {
   resolve: {
     extensions: [".js", ".jsx", ".json"], //这个是省略获取后缀文件名不加后缀jsx就报错
   },
+  devServer: {
+    // contentBase: "../build",
+    port: 12121,
+    historyApiFallback: true,
+    hot: true,
+    quiet: true,
+  },
   plugins: [
     new HtmlWebpackPlugin({
       template: "public/index.html",
@@ -56,14 +63,6 @@ module.exports = {
     new CleanWebpackPlugin(),
     new WebpackBar(),
     new SpeedMeasurePlugin(),
-    new FriendlyErrorsWebpackPlugin({
-      compilationSuccessInfo: {
-        messages: ["You application is running here http://localhost:12121"],
-        notes: [
-          "Some additionnal notes to be displayed unpon successful compilation",
-        ],
-      },
-      clearConsole: true,
-    }),
+    new FriendlyErrorsWebpackPlugin(),
   ],
 };

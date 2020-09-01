@@ -54,5 +54,6 @@ module.exports = merge(baseConfig, {
     new TerserPlugin({
       parallel: true,
     }),
+    new webpack.optimize.ModuleConcatenationPlugin(),
   ],
 });

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- Object.assign -->
+  <script type="text/html">
+    const target = { a: 1, b: 2 };
+    const source = { b: 4, c: 5 };
+    const nice = { e: 8, c: 6, f: { name: 'cc', value: 'cz' } };
+
+    const newObj = Object.assign(target, source, nice)
+    console.log(target)
+    console.log(newObj)
+  </script>
+  <!-- Object.assign -->
+  <script>
+    function sum(a, b, c) {
+      return a + b + c;
+    }
+    let numbers = [1, 2, 3];
+    console.log(...numbers)
+    console.log(sum(...numbers))
+  </script>
+</body>
+
+</html>
